@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #0A0A0B;
+  color: #fff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Keyframes */
+@keyframes smFadeUp     { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
+@keyframes smFadeIn     { from { opacity:0; } to { opacity:1; } }
+@keyframes smUnderline  { from { transform:scaleX(0); } to { transform:scaleX(1); } }
+@keyframes smBlink      { 0%,100%{opacity:1} 50%{opacity:0.35} }
+@keyframes smScrollFill { 0%{top:-100%} 100%{top:100%} }
+@keyframes smDotPulse   { 0%,100%{opacity:0;transform:scale(0.5)} 50%{opacity:0.55;transform:scale(1)} }
+
+/* ── CURSOR GLOW EFFECT ─────────────────────────────── */
+.cursor-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 600px;
+  height: 600px;
+  /* Center the div on the mouse coordinates */
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* Crucial: lets clicks pass through to buttons/links */
+  z-index: 9999; /* Sit on top of backgrounds, below interactive content if needed */
+  
+  /* The Candle Glow Gradient */
+  background: radial-gradient(
+    circle at center,
+    rgba(200, 75, 17, 0.15) 0%,   /* Bright Orange Center (Brand Color) */
+    rgba(200, 75, 17, 0.05) 20%,  /* Soft Fade */
+    transparent 70%               /* Invisible Edge */
+  );
+  
+  /* Smooth out any jitter */
+  will-change: transform, left, top;
+  transition: opacity 0.3s ease;
+  
+  /* Optional: Blur slightly for a softer "light" feel */
+  filter: blur(40px);
+  
+  /* Hide on mobile/touch devices to save battery and avoid confusion */
+  @media (hover: none) {
+    display: none;
+  }
+}
+
+/* Optional: Make the glow brighter when hovering over interactive elements */
+body:has(:hover) .cursor-glow {
+  background: radial-gradient(
+    circle at center,
+    rgba(200, 75, 17, 0.25) 0%,
+    rgba(200, 75, 17, 0.08) 20%,
+    transparent 70%
+  );
+}
+
+/* ── NAVIGATION LOGO FIX ────────────────────────────── */
+/* Targets the logo image specifically inside the Nav component */
+nav img[alt="Spacemine Holdings Limited"] {
+  height: 250px !important; /* Increased from default ~40px */
+  width: auto !important;  /* Maintains aspect ratio */
+  display: block;          /* Removes extra bottom spacing */
+  object-fit: contain; 
+  margin-top: 15px;    /* Ensures logo doesn't stretch weirdly */
+}
+
+/* Optional: Make it slightly smaller on mobile devices */
+@media (max-width: 768px) {
+  nav img[alt="Spacemine Holdings Limited"] {
+    height: 200px !important;
+  }
+}
