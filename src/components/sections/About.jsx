@@ -10,7 +10,7 @@ function Tags() {
       {tags.map(tag => (
         <li key={tag} style={{ display: "flex", alignItems: "center", gap: 8 }}>
           <span aria-hidden="true" style={{ width: 8, height: 8, background: BRAND.orange, borderRadius: "50%", display: "inline-block", flexShrink: 0 }} />
-          <span style={{ fontFamily: FONT.heading, fontSize: 12, fontWeight: 600, color: BRAND.dark, letterSpacing: "0.04em" }}>{tag}</span>
+          <span style={{ fontFamily: FONT.mono, fontSize: 8, fontWeight: 600, color: BRAND.dark, letterSpacing: "0.04em" }}>{tag}</span>
         </li>
       ))}
     </ul>
@@ -61,7 +61,7 @@ function AnimatedStatCard() {
       role="img"
       aria-label={`${isComplete ? "10+" : count} years building Kenya's infrastructure`}
       style={{
-        background: BRAND.orange,
+        background: BRAND.gold,
         borderRadius: 8,
         padding: "40px 28px",
         gridRow: "1 / span 2",
@@ -85,7 +85,7 @@ function Cards() {
       <AnimatedStatCard />
 
       <div style={{ background: BRAND.offwhite, borderRadius: 8, padding: "28px", border: `1px solid ${BRAND.lightgray}`, gridColumn: "2" }}>
-        <div aria-hidden="true" style={{ color: BRAND.orange, marginBottom: 12 }}>
+        <div aria-hidden="true" style={{ color: BRAND.gold, marginBottom: 12 }}>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" focusable="false">
             <title>Clock icon</title>
             <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
@@ -97,8 +97,8 @@ function Cards() {
         </p>
       </div>
 
-      <div style={{ background: BRAND.dark, borderRadius: 8, padding: "28px", gridColumn: "2" }}>
-        <div aria-hidden="true" style={{ color: BRAND.orange, marginBottom: 12 }}>
+      <div style={{ background: BRAND.navy, borderRadius: 8, padding: "28px", gridColumn: "2" }}>
+        <div aria-hidden="true" style={{ color: BRAND.gold, marginBottom: 12 }}>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" focusable="false">
             <title>Checkmark icon</title>
             <path d="M22 11.08V12a10 10 0 11-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" />

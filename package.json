@@ -1,14 +1,14 @@
 {
   "name": "spacemine",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "homepage": "https://mikasi35.github.io/spacemine",
+    "homepage": "https://mikasi35.github.io/space",
     "predeploy": "npm run build",
   "deploy": "gh-pages -d dist"
   },

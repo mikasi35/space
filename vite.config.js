@@ -8,6 +8,7 @@ export default defineConfig({
       // silence the fast-refresh lint rule for monolithic files
     }),
   ],
-    base: "/spacemine/",
+    base: "/space/",
+
 })
 

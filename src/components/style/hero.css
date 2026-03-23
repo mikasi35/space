@@ -1,19 +1,28 @@
+
+
 /* ── VARIABLES ─────────────────────────────────────── */
 :root {
-  --brand-orange: #C84B11;
-  --brand-dark: #0A0A0B;
-  --brand-navy: #0D1B3E;
+  /* Brand colors from palette */
+  --brand-gold: #C9A84C;
+  --brand-gold-light: #E2C47A;
+  --brand-gold-dim: #A0803A;
+  --brand-navy: #0E1523;
+  --brand-navy-mid: #16213A;
+  --brand-ivory: #F8F5EF;
   --brand-white: #FFFFFF;
-  --brand-gray: #6B7280;
+  --brand-slate: #4A5568;
+  --brand-mist: #8896A8;
   
-  --font-heading: 'Syne', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
+  /* Typography from palette */
+  --font-heading: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', 'Outfit', system-ui, sans-serif;
+  --font-mono: 'DM Mono', 'Fira Code', monospace;
   
   --max-width: 1200px;
 }
 
-h1{
-    font: 400;
+h1 {
+  font-weight: 400;
 }
 
 /* ── HERO SECTION ──────────────────────────────────── */
@@ -24,7 +33,7 @@ h1{
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: var(--brand-dark);
+  background: var(--brand-navy);
 }
 
 /* ── MEDIA LAYERS (Poster & Video) ─────────────────── */
@@ -68,10 +77,9 @@ h1{
   position: absolute;
   inset: 0;
   z-index: 3;
-  /* Kept: subtle warm wash is fine — it's atmospheric, not orange UI */
   background: 
-    radial-gradient(ellipse 60% 50% at 68% 38%, rgba(200, 75, 17, 0.18) 0%, transparent 60%),
-    linear-gradient(165deg, rgba(10, 10, 11, 0.05) 0%, rgba(10, 10, 11, 0.72) 52%, rgba(10, 10, 11, 0.97) 100%);
+    radial-gradient(ellipse 60% 50% at 68% 38%, rgba(201, 168, 76, 0.18) 0%, transparent 60%),
+    linear-gradient(165deg, rgba(14, 21, 35, 0.05) 0%, rgba(14, 21, 35, 0.72) 52%, rgba(14, 21, 35, 0.97) 100%);
 }
 
 .hero-grain {
@@ -99,10 +107,8 @@ h1{
   right: -4%;
   width: 52%;
   height: 78%;
-  /* CHANGED: orange border → barely-visible white. Keeps the structure, loses the colour noise */
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 0 0 0 58%;
-  /* CHANGED: orange tint fill removed — now fully transparent */
   background: transparent;
 }
 
@@ -112,7 +118,7 @@ h1{
   left: -3%;
   width: 30%;
   height: 40%;
-  background: linear-gradient(45deg, rgba(13, 27, 62, 0.5), transparent);
+  background: linear-gradient(45deg, rgba(22, 33, 58, 0.5), transparent);
   border-radius: 50% 50% 50% 0;
 }
 
@@ -122,7 +128,6 @@ h1{
   left: 48%;
   width: 1px;
   height: 60%;
-  /* CHANGED: orange line → neutral white. Still a compositional element, not a colour hit */
   background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.12), transparent);
 }
 
@@ -132,7 +137,6 @@ h1{
   left: 5%;
   width: 80px;
   height: 80px;
-  /* CHANGED: orange border → neutral white */
   border-left: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 0 0 0 8px;
@@ -143,13 +147,12 @@ h1{
   width: 3px;
   height: 3px;
   border-radius: 50%;
-  /* CHANGED: orange dots → dim white. They're positional markers, not brand moments */
   background: rgba(255, 255, 255, 0.2);
   left: 48%;
   animation: smDotPulse 3s ease-in-out infinite;
 }
 
-/* Dot positioning — unchanged */
+/* Dot positioning */
 .dot-0 { top: 22%; left: calc(48% + 0.4%); animation-delay: 0s; }
 .dot-1 { top: 31%; left: calc(48% - 0.4%); animation-delay: 0.4s; }
 .dot-2 { top: 40%; left: calc(48% + 0.4%); animation-delay: 0.8s; }
@@ -175,7 +178,6 @@ h1{
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  /* CHANGED: orange tint bg + orange border → neutral white-glass */
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 24px;
@@ -189,7 +191,6 @@ h1{
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  /* CHANGED: orange pulsing dot → white. Still alive, not orange */
   background: rgba(255, 255, 255, 0.6);
   animation: smBlink 2.5s ease-in-out infinite;
 }
@@ -198,7 +199,6 @@ h1{
   font-family: var(--font-body);
   font-size: 11px;
   font-weight: 600;
-  /* CHANGED: orange text → muted white */
   color: rgba(255, 255, 255, 0.55);
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -207,7 +207,7 @@ h1{
 /* ── TYPOGRAPHY ────────────────────────────────────── */
 .hero-title {
   font-family: var(--font-heading);
-  font-size: clamp(48px, 5vw, 84px);
+  font-size: 100px;
   font-weight: 600;
   color: var(--brand-white);
   line-height: 1.05;
@@ -216,14 +216,13 @@ h1{
   animation: smFadeUp 0.8s ease 0.25s both;
 }
 
-/* KEPT: this is the ONE intentional orange hit in the entire hero */
+/* The ONE intentional gold accent in the entire hero */
 .hero-title-highlight {
-  color: var(--brand-orange);
+  color: var(--brand-gold);
   position: relative;
   display: inline-block;
 }
 
-/* CHANGED: underline removed — it doubled orange on the same word, making it 2× louder */
 .hero-title-underline {
   display: none;
 }
@@ -264,7 +263,7 @@ h1{
 
 .hero-stats > div {
   padding: 32px 24px;
-  background: rgba(10, 10, 11, 0.4);
+  background: rgba(14, 21, 35, 0.4);
   text-align: center;
   transition: background 0.3s ease;
 }
@@ -274,11 +273,9 @@ h1{
 }
 
 .hero-stats > div:hover {
-  /* CHANGED: orange hover tint → neutral white tint */
   background: rgba(255, 255, 255, 0.06);
 }
 
-/* CHANGED: stat values orange → white. Orange has done its job on "Future"; stats are data */
 .stat-value {
   font-family: var(--font-heading);
   font-size: 36px;
@@ -335,7 +332,6 @@ h1{
   top: -100%;
   width: 100%;
   height: 100%;
-  /* CHANGED: orange scroll fill → neutral white */
   background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.5));
   animation: smScrollFill 2s cubic-bezier(0.4, 0, 0.2, 1) 1.6s infinite;
 }
@@ -436,7 +432,7 @@ h1{
 /* ── STATS STRIP (extended) ────────────────────────── */
 .stat-item {
   padding: 32px 24px;
-  background: rgba(10, 10, 11, 0.4);
+  background: rgba(14, 21, 35, 0.4);
   text-align: center;
   transition: background 0.3s ease, transform 0.3s ease;
   cursor: default;
@@ -447,7 +443,6 @@ h1{
 }
 
 .stat-item:hover {
-  /* CHANGED: orange hover → neutral white */
   background: rgba(255, 255, 255, 0.06);
 }
 
@@ -468,3 +463,18 @@ h1{
     font-size: 11px;
   }
 }
+
+/* ── UTILITY CLASSES (optional additions for palette) ─ */
+.text-gold { color: var(--brand-gold); }
+.text-gold-light { color: var(--brand-gold-light); }
+.text-gold-dim { color: var(--brand-gold-dim); }
+.text-ivory { color: var(--brand-ivory); }
+.text-slate { color: var(--brand-slate); }
+.text-mist { color: var(--brand-mist); }
+
+.bg-navy { background: var(--brand-navy); }
+.bg-navy-mid { background: var(--brand-navy-mid); }
+.bg-ivory { background: var(--brand-ivory); }
+
+.border-gold { border-color: var(--brand-gold); }
+.border-gold-light { border-color: var(--brand-gold-light); }

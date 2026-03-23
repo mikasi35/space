@@ -57,15 +57,7 @@ html {
   }
 }
 
-/* Optional: Make the glow brighter when hovering over interactive elements */
-body:has(:hover) .cursor-glow {
-  background: radial-gradient(
-    circle at center,
-    rgba(200, 75, 17, 0.25) 0%,
-    rgba(200, 75, 17, 0.08) 20%,
-    transparent 70%
-  );
-}
+
 
 /* ── NAVIGATION LOGO FIX ────────────────────────────── */
 /* Targets the logo image specifically inside the Nav component */

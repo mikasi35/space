@@ -1,11 +1,16 @@
 import { useRef, useEffect, useState } from "react";
 import { BRAND, FONT, MAX_WIDTH, ENVIRONMENT_CARDS } from "../../shared/constants";
 import { Icon } from "../common/Icon";
+import { label } from "three/tsl";
+import { href } from "react-router-dom";
 
 // ─── Black hole image — swap path for your preferred image ────────────────────
 // Use either of the two images shared. Recommended: the NASA orange-ring one.
 // Place it at /assets/blackhole.jpg or update the path below.
-const BH_IMAGE = "/assets/images/blackhole.png";
+const BH_IMAGE = {
+    href: "assets/images/blackhole.png",
+    alt: "This an image of a black hole",
+}
 
 // ─── Single card with scroll-driven reveal ────────────────────────────────────
 function EnvCard({ card, index, scrollProgress }) {
@@ -134,7 +139,7 @@ export function Environment() {
           position: "absolute",
           inset: "-10%",          // oversized so zoom never shows edges
           zIndex: 0,
-          backgroundImage: `url(${BH_IMAGE})`,
+          backgroundImage: `url(${BH_IMAGE.href})`,
           backgroundSize: "cover",
           backgroundPosition: "center center",
           transform: `scale(${zoom})`,
